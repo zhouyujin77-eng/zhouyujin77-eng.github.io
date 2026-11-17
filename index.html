@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>孔心烨 KONG XINYE | Personal Portfolio</title>
+
+<meta name="description" content="孔心烨个人求职主页，国际经济与贸易专业本科生，展示教育背景、项目经历、竞赛成果与专业技能。">
+
+<style>
+
+/* ===== 全局设置 ===== */
+
+:root {
+    --bg: #f7f6f2;
+    --white: #ffffff;
+    --black: #242522;
+    --gray: #777873;
+    --light: #e8e6df;
+    --red: #a45e4e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    background: var(--bg);
+    color: var(--black);
+    font-family: Arial, "PingFang SC",
+    "Microsoft YaHei", sans-serif;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===== 导航栏 ===== */
+
+header {
+    height: 80px;
+    padding: 0 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(247,246,242,0.96);
+    border-bottom: 1px solid var(--light);
+}
+
+.logo {
+    font-family: Georgia, serif;
+    font-size: 25px;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--red);
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: #666;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--red);
+}
+
+/* ===== 首页 ===== */
+
+.hero {
+    min-height: 650px;
+    padding: 125px 12%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-tag {
+    color: var(--red);
+    font-size: 11px;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(48px, 9vw, 105px);
+    font-weight: normal;
+    letter-spacing: 3px;
+    line-height: 1.2;
+}
+
+.hero h2 {
+    font-size: 25px;
+    font-weight: normal;
+    letter-spacing: 8px;
+    margin-top: 18px;
+}
+
+.hero-line {
+    width: 65px;
+    height: 2px;
+    background: var(--red);
+    margin: 35px 0;
+}
+
+.hero p {
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 2.3;
+}
+
+.hero-watermark {
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    font-family: Georgia, serif;
+    font-size: clamp(130px, 25vw, 350px);
+    color: rgba(164,94,78,0.045);
+    z-index: 1;
+}
+
+.button {
+    display: inline-block;
+    padding: 14px 30px;
+    margin-top: 35px;
+    background: var(--black);
+    color: white;
+    font-size: 11px;
+    letter-spacing: 2px;
+    transition: .3s;
+}
+
+.button:hover {
+    background: var(--red);
+}
+
+/* ===== 通用板块 ===== */
+
+section {
+    padding: 95px 12%;
+    border-top: 1px solid var(--light);
+}
+
+.section-label {
+    font-family: Georgia, serif;
+    color: var(--red);
+    font-size: 13px;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+}
+
+.section-title {
+    font-size: 35px;
+    font-weight: normal;
+    margin-bottom: 45px;
+}
+
+.section-description {
+    color: var(--gray);
+    font-size: 14px;
+    max-width: 700px;
+    line-height: 2.2;
+}
+
+/* ===== 个人简介 ===== */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: start;
+}
+
+.about-text {
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 2.3;
+}
+
+.about-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.info-item {
+    border-bottom: 1px solid var(--light);
+    padding-bottom: 15px;
+}
+
+.info-item small {
+    color: var(--red);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.info-item p {
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+/* ===== 教育经历 ===== */
+
+.education {
+    border-left: 1px solid #c9b9ac;
+    padding-left: 30px;
+    margin-left: 8px;
+}
+
+.edu-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.edu-item::before {
+    content: "";
+    position: absolute;
+    left: -35px;
+    top: 8px;
+    width: 9px;
+    height: 9px;
+    background: var(--red);
+    border-radius: 50%;
+}
+
+.edu-date {
+    color: var(--red);
+    font-family: Georgia, serif;
+    font-size: 14px;
+}
+
+.edu-item h3 {
+    font-size: 19px;
+    font-weight: normal;
+    margin: 10px 0;
+}
+
+.edu-item p {
+    color: var(--gray);
+    font-size: 13px;
+}
+
+/* ===== 项目经历 ===== */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.project-card {
+    background: #eeece6;
+    padding: 35px;
+    min-height: 230px;
+    transition: .3s;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    background: #e8e4dc;
+}
+
+.project-number {
+    color: var(--red);
+    font-family: Georgia, serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+.project-card h3 {
+    font-size: 19px;
+    font-weight: normal;
+    margin: 23px 0 15px;
+}
+
+.project-card p {
+    color: var(--gray);
+    font-size: 13px;
+    line-height: 2.1;
+}
+
+/* ===== 成果展示 ===== */
+
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.achievement {
+    padding: 35px 20px;
+    border: 1px solid var(--light);
+    text-align: center;
+}
+
+.achievement strong {
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 43px;
+    font-weight: normal;
+    color: var(--red);
+}
+
+.achievement p {
+    color: var(--gray);
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+/* ===== 技能展示 ===== */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.skill-card {
+    padding: 28px;
+    background: #eeece6;
+}
+
+.skill-card h3 {
+    font-weight: normal;
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+.skill-card p {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 2;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.skill-tags span {
+    border: 1px solid #d7d2c8;
+    padding: 9px 17px;
+    font-size: 12px;
+    color: #555;
+}
+
+/* ===== 职业规划 ===== */
+
+.career-box {
+    background: var(--black);
+    color: white;
+    padding: 55px;
+}
+
+.career-box h3 {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+.career-box p {
+    color: #c7c7c0;
+    font-size: 14px;
+    line-height: 2.3;
+    max-width: 700px;
+}
+
+/* ===== 联系方式 ===== */
+
+.contact-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.contact-box h3 {
+    font-family: Georgia, serif;
+    font-size: 35px;
+    font-weight: normal;
+}
+
+.contact-box p {
+    color: var(--gray);
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+/* ===== 页脚 ===== */
+
+footer {
+    padding: 35px 10%;
+    text-align: center;
+    border-top: 1px solid var(--light);
+    color: #999;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+/* ===== 手机适配 ===== */
+
+@media(max-width: 750px) {
+
+    header {
+        height: auto;
+        min-height: 75px;
+        padding: 18px 6%;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    nav {
+        width: 100%;
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .hero {
+        min-height: 520px;
+        padding: 90px 8%;
+    }
+
+    section {
+        padding: 70px 8%;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .achievement-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .career-box {
+        padding: 35px 25px;
+    }
+
+    .contact-box h3 {
+        font-size: 27px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- 导航栏 -->
+
+<header>
+
+    <div class="logo">WEIZHI<span>.</span></div>
+
+    <nav>
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#education">EDUCATION</a>
+        <a href="#projects">PROJECTS</a>
+        <a href="#skills">SKILLS</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
+
+</header>
+
+
+<!-- 首页 -->
+
+<div class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="hero-tag">
+            PERSONAL PORTFOLIO · 2026
+        </div>
+
+        <h1>KONG XINYE</h1>
+
+        <h2>孔心烨</h2>
+
+        <div class="hero-line"></div>
+
+        <p>
+            国际经济与贸易 · 本科在读<br>
+            持续学习 · 项目实践 · 专业成长<br>
+            探索职业发展的更多可能。
+        </p>
+
+        <a href="#about" class="button">
+            EXPLORE MY PROFILE →
+        </a>
+
+    </div>
+
+    <div class="hero-watermark">
+        K
+    </div>
+
+</div>
+
+
+<!-- 关于我 -->
+
+<section id="about">
+
+    <div class="section-label">01 / ABOUT ME</div>
+
+    <h2 class="section-title">关于我</h2>
+
+    <div class="about-grid">
+
+        <div class="about-text">
+
+            我是孔心烨，目前就读于本科院校，
+            专业为国际经济与贸易。
+
+            <br><br>
+
+            在学习过程中，我积极参与学科竞赛、
+            项目研究及相关调研活动，
+            注重理论知识与实际问题的结合。
+
+            <br><br>
+
+            同时，我对人工智能工具、Python
+            和数据分析保持浓厚兴趣，
+            希望不断提升数字化应用能力、
+            信息处理能力与综合职业素养。
+
+        </div>
+
+        <div class="about-info">
+
+            <div class="info-item">
+                <small>NAME</small>
+                <p>孔心烨</p>
+            </div>
+
+            <div class="info-item">
+                <small>ENGLISH NAME</small>
+                <p>KONG XINYE</p>
+            </div>
+
+            <div class="info-item">
+                <small>MAJOR</small>
+                <p>国际经济与贸易</p>
+            </div>
+
+            <div class="info-item">
+                <small>EDUCATION</small>
+                <p>本科在读</p>
+            </div>
+
+            <div class="info-item">
+                <small>INTEREST</small>
+                <p>AI / Python / Data</p>
+            </div>
+
+            <div class="info-item">
+                <small>PORTFOLIO</small>
+                <p>2026 —</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- 教育经历 -->
+
+<section id="education">
+
+    <div class="section-label">02 / EDUCATION</div>
+
+    <h2 class="section-title">教育背景</h2>
+
+    <div class="education">
+
+        <div class="edu-item">
+
+            <div class="edu-date">
+                2026 — PRESENT
+            </div>
+
+            <h3>本科阶段</h3>
+
+            <p>
+                国际经济与贸易专业<br>
+                专转本 · 本科在读
+            </p>
+
+        </div>
+
+        <div class="edu-item">
+
+            <div class="edu-date">
+                PREVIOUS EDUCATION
+            </div>
+
+            <h3>专科阶段</h3>
+
+            <p>
+                完成专科阶段学习，
+                积累专业知识与学科竞赛经验。
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- 项目经历 -->
+
+<section id="projects">
+
+    <div class="section-label">03 / PROJECT EXPERIENCE</div>
+
+    <h2 class="section-title">项目经历</h2>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+
+            <div class="project-number">
+                PROJECT 01
+            </div>
+
+            <h3>大学生创新创业竞赛</h3>
+
+            <p>
+                参与中国国际大学生创新大赛相关项目，
+                获得二等奖，积累项目研究、
+                竞赛参与与团队协作经验。
+            </p>
+
+        </div>
+
+
+        <div class="project-card">
+
+            <div class="project-number">
+                PROJECT 02
+            </div>
+
+            <h3>龙头渚产学研融合项目</h3>
+
+            <p>
+                参与产学研融合相关项目，
+                结合项目研究内容，
+                积累项目调研与实践经验。
+            </p>
+
+        </div>
+
+
+        <div class="project-card">
+
+            <div class="project-number">
+                PROJECT 03
+            </div>
+
+            <h3>南京农业大学项目调研</h3>
+
+            <p>
+                参与相关项目调研工作，
+                接触项目研究与信息收集，
+                积累调研实践经历。
+            </p>
+
+        </div>
+
+
+        <div class="project-card">
+
+            <div class="project-number">
+                PROJECT 04
+            </div>
+
+            <h3>知识产权成果</h3>
+
+            <p>
+                拥有1项实用新型专利，
+                在创新实践与项目探索过程中
+                积累相关经验。
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- 竞赛成果 -->
+
+<section>
+
+    <div class="section-label">04 / ACHIEVEMENTS</div>
+
+    <h2 class="section-title">竞赛与成果</h2>
+
+    <div class="achievement-grid">
+
+        <div class="achievement">
+
+            <strong>20+</strong>
+
+            <p>国家级、省级奖项</p>
+
+        </div>
+
+        <div class="achievement">
+
+            <strong>02</strong>
+
+            <p>中国国际大学生创新大赛二等奖</p>
+
+        </div>
+
+        <div class="achievement">
+
+            <strong>01</strong>
+
+            <p>实用新型专利</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- 专业技能 -->
+
+<section id="skills">
+
+    <div class="section-label">05 / PROFESSIONAL SKILLS</div>
+
+    <h2 class="section-title">专业技能</h2>
+
+    <div class="skills-grid">
+
+        <div class="skill-card">
+
+            <h3>专业能力</h3>
+
+            <p>
+                国际经济与贸易相关专业知识，
+                项目研究与信息整理。
+            </p>
+
+        </div>
+
+        <div class="skill-card">
+
+            <h3>数字化工具</h3>
+
+            <p>
+                Python学习与应用，
+                数据处理及基础分析。
+            </p>
+
+        </div>
+
+        <div class="skill-card">
+
+            <h3>AI工具应用</h3>
+
+            <p>
+                ChatGPT等人工智能工具，
+                辅助学习、信息整理与内容处理。
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="skill-tags">
+
+        <span>Microsoft Office</span>
+        <span>Python</span>
+        <span>Pandas</span>
+        <span>Matplotlib</span>
+        <span>ChatGPT</span>
+        <span>AI Tools</span>
+        <span>Data Analysis</span>
+
+    </div>
+
+</section>
+
+
+<!-- 职业发展 -->
+
+<section>
+
+    <div class="section-label">06 / CAREER DEVELOPMENT</div>
+
+    <h2 class="section-title">职业发展</h2>
+
+    <div class="career-box">
+
+        <h3>Keep Learning. Keep Growing.</h3>
+
+        <p>
+            持续夯实国际经济与贸易专业基础，
+            提升数据处理、办公应用和信息分析能力。
+
+            <br><br>
+
+            通过实习与项目实践积累工作经验，
+            不断完善专业知识结构，
+            探索适合自身发展的职业方向。
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- 联系方式 -->
+
+<section id="contact">
+
+    <div class="section-label">07 / CONTACT</div>
+
+    <div class="contact-box">
+
+        <div>
+
+            <h3>Let's Connect.</h3>
+
+            <p>
+                欢迎交流学习、项目与职业发展。
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- 页脚 -->
+
+<footer>
+
+    WEIZHI · KONG XINYE
+
+    <br><br>
+
+    PERSONAL PORTFOLIO © 2026
+
+</footer>
+
+</body>
+</html>
